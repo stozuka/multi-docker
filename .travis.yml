@@ -14,7 +14,7 @@ after_success:
   - docker image build -t stozuka/multi-nginx ./nginx
   - docker image build -t stozuka/multi-server ./server
   - docker image build -t stozuka/multi-worker ./worker
-  - echo "$DOCKER_ID" | docker login -u "$DOCKER_PASSWORD" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push stozuka/multi-client
   - docker push stozuka/multi-nginx
   - docker push stozuka/multi-server
